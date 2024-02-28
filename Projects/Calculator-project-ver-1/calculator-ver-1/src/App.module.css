@@ -1,0 +1,13 @@
+.calculatorDiv{
+    border: 1px solid red;
+    border-radius: 0.1rem;
+    padding: 1rem;
+    width: 30%;
+}
+
+/* .display{
+    margin: 10px;
+    width: 90%;
+    padding: 0.4rem;
+} */
+
