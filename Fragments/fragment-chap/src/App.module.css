@@ -1,0 +1,12 @@
+.buttn{
+    background-color: aqua;
+    border: red 1px solid;
+    color: white;
+    font-weight: 600;
+    margin: 0 8px;
+    float: right;
+}
+
+.list{
+    width: 50%;
+}
