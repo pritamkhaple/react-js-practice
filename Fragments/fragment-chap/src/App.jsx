@@ -1,33 +1,32 @@
-import "./App.css";
-import style from "./App.module.css"
 import FoodItems from "./components/FoodItems";
-import InputDiv from "./components/InputDiv";
+import ErrorMessage from "./components/ErrorMessage";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import Container from "./components/Container";
+import FoodInput from "./components/FoodInput";
+import { useState } from "react";
 
 function App() {
-  let foodItems = ["Pizza (kidding ha)", "Milk",  "Dal-Bhaat", "Roti", "Whatever you like"]; // Add more items as needed
+  let [foodItems, setFoodItems] = useState([]);
 
-  const handleButtn = (item) => {
-    console.log(`${item} buttn clicked`)
-  }
+  const onKeyDown = (event) => {
+    if (event.key === "Enter") {
+      let newFoodItem = event.target.value;
+      event.target.value = "";
+      let newItems = [...foodItems, newFoodItem];
+      setFoodItems(newItems);
+    }
+  };
 
   return (
     <>
-      {/* // Map Method */}
-      <h1>Healthy Food</h1>
-      <InputDiv></InputDiv>
-      {/* <FoodItems></FoodItems> */}
-      <ul className={`list-group ${style.list}`}>
-        {foodItems.map((item)=>(
-        <li key={item} className="list-group-item">{item}
-          <button className={style.buttn} onClick={ () => handleButtn(item)}>
-            Buy
-          </button>
-        </li>
-        ))}
-      </ul>
+      <Container>
+        <h1 className="food-heading">Healthy Food</h1>
+        <FoodInput handleKeyDown={onKeyDown}></FoodInput>
+        <ErrorMessage items={foodItems}></ErrorMessage>
+        <FoodItems items={foodItems}></FoodItems>
+      </Container>
     </>
-    
   );
 }
 
