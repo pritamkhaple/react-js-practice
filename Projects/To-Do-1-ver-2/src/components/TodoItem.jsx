@@ -1,4 +1,4 @@
-function TodoItem({taskName, taskDate}) {
+function TodoItem({taskName, taskDate, onDeleteClick}) {
   return (
     <div class="container text-center">
       <div class="row">
@@ -9,7 +9,7 @@ function TodoItem({taskName, taskDate}) {
           <h3>{taskDate}</h3>
         </div>
         <div class="col-sm-2">
-          <button type="button" class="btn btn-danger">
+          <button type="button" class="btn btn-danger" onClick={() => onDeleteClick(taskName)}>
             Delete
           </button>
         </div>
