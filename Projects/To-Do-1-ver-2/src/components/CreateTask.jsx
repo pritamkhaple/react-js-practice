@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { RiTaskFill } from "react-icons/ri";
 
 function CreateTask({ onNewItem }) {
   const [todoName, setTodoName] = useState("");
@@ -12,7 +13,8 @@ function CreateTask({ onNewItem }) {
     setDueDate(event.target.value);
   };
 
-  const handleAddButtonClicked = () => {
+  const handleAddButtonClicked = (event) => {
+    event.preventDefault();
     onNewItem(todoName, dueDate);
     setTodoName("");  
     setDueDate("");
@@ -21,7 +23,7 @@ function CreateTask({ onNewItem }) {
 
   return (
     <div class="container text-center">
-      <div class="row">
+      <form onSubmit={handleAddButtonClicked} class="row">
         <div class="col-sm-6">
           <input
             type="text"
@@ -35,14 +37,13 @@ function CreateTask({ onNewItem }) {
         </div>
         <div class="col-sm-2">
           <button
-            type="button"
+            type="submit"
             class="btn btn-success"
-            onClick={handleAddButtonClicked}
           >
-            Add
+            Add <RiTaskFill />
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 }

@@ -1,3 +1,7 @@
+import { MdAutoDelete } from "react-icons/md";
+import style from "./AppName.module.css"
+
+
 function TodoItem({taskName, taskDate, onDeleteClick}) {
   return (
     <div class="container text-center">
@@ -10,7 +14,7 @@ function TodoItem({taskName, taskDate, onDeleteClick}) {
         </div>
         <div class="col-sm-2">
           <button type="button" class="btn btn-danger" onClick={() => onDeleteClick(taskName)}>
-            Delete
+            Delete <MdAutoDelete />
           </button>
         </div>
       </div>
