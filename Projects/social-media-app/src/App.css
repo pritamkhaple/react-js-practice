@@ -9,3 +9,16 @@
 .sidebar{
     min-height: 800px;
 }
+
+.post-card{
+    margin: 20px 40px;
+    width: 25rem;
+}
+
+.hashtag{
+    margin: 0 5px;
+}
+
+.reactn{
+    margin: 5px 0;
+}
