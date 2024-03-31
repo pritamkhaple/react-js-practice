@@ -8,6 +8,7 @@
 
 .sidebar{
     min-height: 800px;
+    max-width: 20%;
 }
 
 .post-card{
@@ -21,4 +22,9 @@
 
 .reactn{
     margin: 5px 0;
+}
+
+.create-post{
+    max-width: 50%;
+    margin: 2rem;
 }
